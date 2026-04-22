@@ -1,0 +1,36 @@
+[project]
+name = "credit-fraud-mlops"
+version = "0.1.0"
+description = "Proyecto sobre practicas de  MLOps: Detección de fraude con monitoreo de drift y orquestación."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+    { name = "Diego Nuñez", email = "diegofernd@gmail.com" }
+]
+dependencies = [
+    "pandas>=2.0.0",
+    "numpy>=1.24.0",
+    "scikit-learn>=1.3.0",
+    "matplotlib>=3.7.0",
+    "seaborn>=0.12.0",
+    "kagglehub>=0.2.0",        # Para la descarga del dataset
+    "mlflow>=2.10.0",          # Tracking de experimentos y Model Registry
+    "prefect>=2.16.0",         # Orquestación de flujos (Data Pipelines)
+    "fastapi>=0.100.0",        # Creación de la API para el modelo
+    "uvicorn>=0.23.0",         # Servidor ASGI para FastAPI
+    "evidently>=0.4.0",        # Análisis de Data Drift y calidad del modelo
+    "imbalanced-learn>=0.11.0", # Manejo de desbalance (SMOTE, etc.)
+    "pydantic>=2.0.0",         # Validación de esquemas de datos en la API
+    "python-dotenv>=1.0.0",    # Manejo de variables de entorno
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest>=7.4.0",
+    "black>=23.7.0",
+    "ipykernel>=6.25.0",
+]
